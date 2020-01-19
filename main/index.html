@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style/main.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <script>
+        var images = ['img/Amoledtheme.png', 'img/adblocker.png', 'img/PiP.png'];
+        var title = ['Amoled Theme', 'AdBlocker', 'Picture in Picture'];
+        var id = ['amo', 'ad', 'pip'];
+        var n = 0;
+        function changeImg() {
+            var ele = document.getElementById("rotatingImg");
+            ele.src = images[n];
+            ele.title = title[n];
+            document.getElementById(id[n]).className = "activeImg";
+            if (n != 0) {
+                document.getElementById(id[n - 1]).className = "";
+            }
+            else {
+                document.getElementById(id[2]).className = "";
+            }
+
+
+            n++;
+
+            if (n >= 3) {
+                n = 0;
+            }
+        }
+        function startTimer() {
+            setInterval(changeImg, 3000);
+        }
+    </script>
+</head>
+
+<body onload="changeImg(), startTimer()">
+    <header>
+        <!--<h1>Site</h1>-->
+        <a href="index.html">
+            <img src="img/20200118_181041.png" height="60px" class="logoCenter">
+            <img src="img/20200118_181002.png" height="60px" class="logo">
+        </a>
+        <nav>
+            <h3 class="infoNav">Install</h3>
+            <hr>
+            <div class="infoNavDD">
+
+                <a href="nonroot/index.html"><span class="quickInstall" id="non-root">Non-Root</span></a>
+                <a href="root/index.html"><span class="quickInstall" id="root">Root</span></a>
+                <span class="quickInstall" id="magisk" title="Unavailabe">Magisk</span>
+
+            </div>
+
+        </nav>
+
+
+    </header>
+
+    <div class="spacerHeader">
+
+    </div>
+    <section class="main">
+        <span class="big">
+            The most <strong class="powerful">powerful</strong> modified YouTube client.
+        </span>
+
+        <br>
+        <br>
+        <div class="imageContainer">
+
+            <img id="rotatingImg" height="500px">
+            <!--
+            <img src="img/Amoledtheme.png" height="600px" title="Amoled">
+
+            <img src="img/adblocker.png" height="600px" title="Ad-blocker">
+
+            <img src="img/PiP.png" height="600px" title="Picture in Picture">-->
+        </div>
+
+        <div class="imageInformation">
+
+            <span id="amo">Amoled Theme</span>
+            <br>
+            Because dark mode should actually be dark mode.
+            <br><br>
+            <hr>
+
+            <span id="ad">AdBlocker</span>
+            <br>
+
+            In a time where ads are constantly shoved down our throats, we deserve a break.
+            <br><br>
+            <hr>
+
+            <span id="pip">Picture in Picture</span>
+            <br>
+
+            The fun should never end.
+
+        </div>
+
+        <div class="media">
+            <br>
+            
+
+            <a href="https://discord.gg/b8h5TTU" target="_blank"><div class="sm">
+                <img src="img/Discord-Logo-White.png" height="100px;">
+            </div></a>
+
+            <a href="https:/www.reddit.com/r/vanced" target="_blank">
+            <div class="sm">
+                <img src="img/Reddit_VerticalLockup_OnDark.png" height="100px;">
+            </div>
+            </a>
+            <a href="https://web.telegram.org/#/im?p=@Vanced">
+            <div class="sm">
+                <img src="img/845798_logo_512x512.png" height="100px;" style="filter: invert(100%)">
+            </div>
+            </a>
+            <a href="https://brave.com/?ref=van874">
+            <div class="sm">
+                <img src="img/brave.png" height="100px;">
+            </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>YouTube Vanced</footer>
+</body>
+
+</html>
